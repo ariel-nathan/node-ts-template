@@ -6,6 +6,8 @@ export const env = createEnv({
   server: {
     DATABASE_URL: z.string().url(),
   },
-  runtimeEnv: process.env,
+  runtimeEnv: {
+    DATABASE_URL: process.env.DATABASE_URL,
+  },
   emptyStringAsUndefined: true,
 });
